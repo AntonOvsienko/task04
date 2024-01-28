@@ -12,11 +12,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-@SqsTriggerEventSource(targetQueue = "async_queue", batchSize = 1)
+@SqsTriggerEventSource(targetQueue = "async_queue", batchSize = 10)
 @LambdaHandler(lambdaName = "sns_handler",
-	roleName = "sns_handler-role",
-	isPublishVersion = true,
-	aliasName = "${lambdas_alias_name}"
+	roleName = "sns_handler-role"
 )
 public class SnsHandler implements RequestHandler<SNSEvent, Void> {
 	LambdaLogger logger;

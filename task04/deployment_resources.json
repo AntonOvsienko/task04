@@ -28,7 +28,8 @@
     "predefined_policies": [],
     "principal_service": "lambda",
     "custom_policies": [
-      "lambda-basic-execution"
+      "lambda-basic-execution",
+      "AmazonSQSFullAccess"
     ],
     "resource_type": "iam_role",
     "allowed_accounts": [
@@ -39,7 +40,9 @@
     "predefined_policies": [],
     "principal_service": "lambda",
     "custom_policies": [
-      "lambda-basic-execution"
+      "lambda-basic-execution",
+      "AmazonSNSFullAccess",
+      "AmazonSQSFullAccess"
     ],
     "resource_type": "iam_role",
     "allowed_accounts": [
@@ -53,13 +56,6 @@
   },
   "lambda_topic": {
     "region": "eu-central-1",
-    "resource_type": "sns_topic",
-    "event_sources": [
-      {
-        "resource_type": "sqs_trigger",
-        "target_queue": "async_queue",
-        "batch_size": 1
-      }
-    ]
+    "resource_type": "sns_topic"
   }
 }
