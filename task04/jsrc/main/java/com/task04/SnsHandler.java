@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-@SqsTriggerEventSource(targetQueue = "async_queue", batchSize = 1)//
+@SqsTriggerEventSource(targetQueue = "async_queue", batchSize = 1)
 @LambdaHandler(lambdaName = "sns_handler",
 	roleName = "sns_handler-role",
 	isPublishVersion = true,
